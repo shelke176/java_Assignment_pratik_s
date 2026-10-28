@@ -1,0 +1,3 @@
+class SharedCounter { private int count=0;synchronized void increment(){count++;}int getCount(){return count;} }
+class CounterThread extends Thread { private SharedCounter counter;CounterThread(SharedCounter c){counter=c;}public void run(){for(int i=0;i<10000;i++)counter.increment();} }
+public class SynchronizationDemo { public static void main(String[] a){SharedCounter c=new SharedCounter();Thread x=new CounterThread(c),y=new CounterThread(c);x.start();y.start();try{x.join();y.join();}catch(InterruptedException e){Thread.currentThread().interrupt();}System.out.println("Final counter: "+c.getCount());} }

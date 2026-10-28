@@ -1,0 +1,2 @@
+import java.io.*;import java.util.Scanner;
+public class UppercaseFileCopy { public static void main(String[] a){Scanner s=new Scanner(System.in);System.out.print("Source file: ");String in=s.nextLine();System.out.print("Destination file: ");String out=s.nextLine();try(FileReader r=new FileReader(in);FileWriter w=new FileWriter(out)){int c;while((c=r.read())!=-1)w.write(Character.toUpperCase((char)c));System.out.println("Copied in uppercase.");}catch(IOException e){System.out.println("File error: "+e.getMessage());}s.close();} }

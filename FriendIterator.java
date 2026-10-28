@@ -1,0 +1,2 @@
+import java.util.*;
+public class FriendIterator { public static void main(String[] a){Scanner s=new Scanner(System.in);LinkedList<String> friends=new LinkedList<>();System.out.print("Number of friends: ");int n=s.nextInt();s.nextLine();for(int i=0;i<n;i++){System.out.print("Name: ");friends.add(s.nextLine());}Iterator<String> it=friends.iterator();while(it.hasNext())System.out.println(it.next());s.close();} }

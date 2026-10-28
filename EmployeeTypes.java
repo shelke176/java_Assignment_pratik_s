@@ -1,0 +1,5 @@
+import java.util.Scanner;
+class StaffEmployee { protected String name; protected double salary; StaffEmployee(String n,double s){name=n;salary=s;} void show(){System.out.println("Name: "+name+" Salary: "+salary);} }
+class Programmer extends StaffEmployee { private String language; Programmer(String n,double s,String l){super(n,s);language=l;} void show(){super.show();System.out.println("Language: "+language);} }
+class Developer extends StaffEmployee { private String language; Developer(String n,double s,String l){super(n,s);language=l;} void show(){super.show();System.out.println("Language: "+language);} }
+public class EmployeeTypes { public static void main(String[] a){Scanner s=new Scanner(System.in);System.out.print("Programmer name, salary, language: ");String pn=s.nextLine();double ps=s.nextDouble();s.nextLine();String pl=s.nextLine();System.out.print("Developer name, salary, language: ");String dn=s.nextLine();double ds=s.nextDouble();s.nextLine();String dl=s.nextLine();System.out.println("Programmer:");new Programmer(pn,ps,pl).show();System.out.println("Developer:");new Developer(dn,ds,dl).show();s.close();} }

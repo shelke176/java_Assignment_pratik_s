@@ -1,0 +1,2 @@
+import java.util.*;
+public class HashMapSortByKey { public static void main(String[] a){Scanner s=new Scanner(System.in);HashMap<String,String> map=new HashMap<>();System.out.print("Number of pairs: ");int n=s.nextInt();s.nextLine();for(int i=0;i<n;i++){System.out.print("Key: ");String k=s.nextLine();System.out.print("Value: ");map.put(k,s.nextLine());}TreeMap<String,String> sorted=new TreeMap<>(map);for(Map.Entry<String,String> e:sorted.entrySet())System.out.println(e.getKey()+" = "+e.getValue());s.close();} }

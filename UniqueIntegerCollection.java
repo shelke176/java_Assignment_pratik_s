@@ -1,0 +1,2 @@
+import java.util.*;
+public class UniqueIntegerCollection { public static void main(String[] a){Scanner s=new Scanner(System.in);TreeSet<Integer> values=new TreeSet<>();System.out.print("Number of integers: ");int n=s.nextInt();for(int i=0;i<n;i++)values.add(s.nextInt());System.out.println("Sorted unique values: "+values);System.out.print("Search value: ");System.out.println(values.contains(s.nextInt())?"Found":"Not found");s.close();} }

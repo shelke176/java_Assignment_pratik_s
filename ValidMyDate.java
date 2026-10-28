@@ -1,0 +1,4 @@
+import java.time.DateTimeException;import java.time.LocalDate;import java.util.Scanner;
+class InvalidDateException extends Exception { InvalidDateException(){super("InvalidDateException: date is invalid");} }
+class MyDateRecord { private int day,month,year;void accept(int d,int m,int y)throws InvalidDateException{try{LocalDate.of(y,m,d);day=d;month=m;year=y;}catch(DateTimeException e){throw new InvalidDateException();}}void show(){System.out.printf("%02d-%02d-%04d%n",day,month,year);} }
+public class ValidMyDate { public static void main(String[] a){Scanner s=new Scanner(System.in);System.out.print("Enter day month year: ");int d=s.nextInt(),m=s.nextInt(),y=s.nextInt();MyDateRecord date=new MyDateRecord();try{date.accept(d,m,y);date.show();}catch(InvalidDateException e){System.out.println(e.getMessage());}s.close();} }
